@@ -5,6 +5,7 @@ require.config({
       config: '../config/config',
       templates: '../templates',
       adapters: 'snips/adapters',
+      formatters: 'snips/formatters',
 
       backbone: 'thirdparty/backbone',
       'backbone.babysitter': 'thirdparty/backbone.babysitter.min',

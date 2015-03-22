@@ -5,7 +5,8 @@ define([
    'underscore',
    'backbone',
    'rivets',
-   'views/bound-view'
+   'views/bound-view',
+   'formatters'
 ], function($, _, Backbone, rivets, BoundView){
    var BoundView = Backbone.View.extend({
       binding: null,  // used for rivets
