@@ -5,11 +5,12 @@ define([
    'underscore',
    'backbone',
    'marionette',
-   'collections/game-collection'
-], function($, _, Backbone, Marionette, GameCollection){
+   'collections/game-collection',
+   'templates'
+], function($, _, Backbone, Marionette, GameCollection, templates){
    var SingleGameItem = Marionette.ItemView.extend({
       tagName: "li",
-      template: _.template("<a href='<%-ident%>'><%-ident%></a>")
+      template: _.template(templates.GameListItem)
    });
 
    var GameList = Marionette.CollectionView.extend({

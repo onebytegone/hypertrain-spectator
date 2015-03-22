@@ -3,7 +3,7 @@
 require.config({
    paths: {
       config: '../config/config',
-      templates: '../templates',
+      templates: '../templates/templates',
       adapters: 'snips/adapters',
       formatters: 'snips/formatters',
 

@@ -7,12 +7,12 @@ define([
    'rivets',
    'views/bound-view',
    'views/game-preview',
-   'text!templates/pages/game-info.html',
+   'templates',
    'models/game-item'
-], function($, _, Backbone, rivets, BoundView, GamePreview, viewTemplate, GameItem){
+], function($, _, Backbone, rivets, BoundView, GamePreview, templates, GameItem){
    var GameInfoView = BoundView.extend({
       el: $('#page'),
-      template: viewTemplate,
+      template: templates.gameinfo,
       preview: null,
 
       initialize: function(ident) {
