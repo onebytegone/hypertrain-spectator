@@ -4,13 +4,26 @@ define([
    'jquery',
    'underscore',
    'backbone',
-   'views/bound-view',
-   'text!templates/pages/game-list.html',
+   'marionette',
    'collections/game-collection'
-], function($, _, Backbone, BoundView, viewTemplate, GameCollection){
-   var GameListView = BoundView.extend({
+], function($, _, Backbone, Marionette, GameCollection){
+   var SingleGameItem = Marionette.ItemView.extend({
+      tagName: "li",
+      template: _.template("<a href='<%-ident%>'><%-ident%></a>")
+   });
+
+   var GameList = Marionette.CollectionView.extend({
+      tagName: 'ul',
+      childView: SingleGameItem
+   });
+
+   var GameListPage = Marionette.LayoutView.extend({
       el: $('#page'),
-      template: viewTemplate,
+      template: _.template('<div id="list"></list>'),
+
+      regions: {
+         list: "#list",
+      },
 
       initialize: function() {
          _.bindAll(this, 'render');
@@ -23,8 +36,14 @@ define([
                self.render();
             }
          });
+      },
+
+      render: function() {
+         Marionette.LayoutView.prototype.render.apply(this, arguments);
+         this.getRegion('list').show(new GameList({collection: this.collection}));
+         return this;
       }
    });
 
-   return GameListView;
+   return GameListPage;
 });
