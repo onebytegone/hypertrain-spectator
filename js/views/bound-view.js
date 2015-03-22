@@ -5,11 +5,12 @@ define([
    'underscore',
    'backbone',
    'rivets',
+   'marionette',
    'views/bound-view',
    'adapters',
    'formatters'
-], function($, _, Backbone, rivets, BoundView){
-   var BoundView = Backbone.View.extend({
+], function($, _, Backbone, rivets, Marionette, BoundView){
+   var BoundView = Marionette.LayoutView.extend({
       binding: null,  // used for rivets
       template: null,  // HTML for template
 

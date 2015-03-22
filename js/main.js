@@ -9,9 +9,9 @@ require.config({
 
       backbone: 'thirdparty/backbone',
       'backbone.babysitter': 'thirdparty/backbone.babysitter.min',
-      'backbone.marionette': 'thirdparty/backbone.marionette.min',
       'backbone.wreqr': 'thirdparty/backbone.wreqr.min',
       jquery: 'thirdparty/jquery-1.11.2.min',
+      marionette: 'thirdparty/backbone.marionette.min',
       rivets: 'thirdparty/rivets.min',
       sightglass: 'thirdparty/sightglass',
       text: 'thirdparty/text',  // Plug-in for requirejs. Used to help with templating
@@ -29,7 +29,7 @@ require.config({
       },
       marionette : {
          deps : ['backbone.babysitter', 'backbone.wreqr'],
-         exports : 'backbone.marionette'
+         exports : 'marionette'
       }
    }
 });
