@@ -3,11 +3,13 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'views/pages/game-list'
-], function($, _, Backbone, GameListPage){
+  'views/pages/game-list',
+  'views/pages/game-info'
+], function($, _, Backbone, GameListPage, GameInfoView){
    var AppRouter = Backbone.Router.extend({
       routes: {
          'allgames': 'showGameList',
+         'game/:ident': 'showGame',
 
          // Default
          '*actions': 'defaultAction'
@@ -19,6 +21,11 @@ define([
 
       app_router.on('route:showGameList', function(){
          var view = new GameListPage();
+         view.render();
+      });
+
+      app_router.on('route:showGame', function(ident){
+         var view = new GameInfoView();
          view.render();
       });
 

@@ -1,17 +1,17 @@
 // Filename: views/pages/game-list
 
 define([
-  'jquery',
-  'underscore',
-  'backbone',
-  'rivets',
-  'text!templates/pages/game-list.html',
-  'collections/game-collection',
-  'adapters'
-], function($, _, Backbone, rivets, viewTemplate, GameCollection){
-   var GameListView = Backbone.View.extend({
+   'jquery',
+   'underscore',
+   'backbone',
+   'views/bound-view',
+   'text!templates/pages/game-list.html',
+   'collections/game-collection',
+   'adapters'
+], function($, _, Backbone, BoundView, viewTemplate, GameCollection){
+   var GameListView = BoundView.extend({
       el: $('#page'),
-      binding: null, // used for rivets
+      template: viewTemplate,
 
       initialize: function() {
          _.bindAll(this, 'render');
@@ -24,15 +24,6 @@ define([
                self.render();
             }
          });
-      },
-
-      render: function(){
-         this.$el.html( viewTemplate );
-         this.binding = rivets.bind(this.$el, {view: this});
-      },
-
-      remove: function() {
-         this.binding.unbind();
       }
    });
 
