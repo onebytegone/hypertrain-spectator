@@ -2,7 +2,7 @@
 
 var imports = {
    'GameListPage': 'text!../templates/pages/game-list.html',
-   'gameinfo': 'text!../templates/pages/game-info.html',
+   'GameInfoPage': 'text!../templates/pages/game-info.html',
    'GameListItem': 'text!../templates/elements/game-list-item.html',
 };
 
