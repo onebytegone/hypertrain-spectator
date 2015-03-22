@@ -14,9 +14,7 @@ define([
 
       parse: function(response) {
          // No refomatting currently needed
-         console.log('log');
-         console.log(response);
-         return response.payload.game;
+         return response;
       },
 
       // Overwrite the sync method to pass over the Same Origin Policy
