@@ -23,12 +23,12 @@ define([
       sync: function(method, model, options) {
          console.log('sync');
          var self = this;
-            var params = _.extend({
-               type: 'GET',
-               dataType: 'jsonp',
-               url: config.server + '/spectator/' + this.ident,
-               processData: false
-            }, options);
+         var params = _.extend({
+            type: 'GET',
+            dataType: 'jsonp',
+            url: config.server + '/spectator/' + this.ident,
+            processData: false
+         }, options);
 
          return $.ajax(params);
       }

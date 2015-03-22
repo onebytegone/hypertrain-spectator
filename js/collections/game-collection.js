@@ -22,12 +22,12 @@ define([
       // Overwrite the sync method to pass over the Same Origin Policy
       sync: function(method, model, options) {
          var self = this;
-            var params = _.extend({
-               type: 'GET',
-               dataType: 'jsonp',
-               url: self.url,
-               processData: false
-            }, options);
+         var params = _.extend({
+            type: 'GET',
+            dataType: 'jsonp',
+            url: self.url,
+            processData: false
+         }, options);
 
          return $.ajax(params);
       }
