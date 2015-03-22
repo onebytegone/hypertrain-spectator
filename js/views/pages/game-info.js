@@ -8,8 +8,7 @@ define([
    'views/bound-view',
    'views/game-preview',
    'text!templates/pages/game-info.html',
-   'models/game-item',
-   'adapters'
+   'models/game-item'
 ], function($, _, Backbone, rivets, BoundView, GamePreview, viewTemplate, GameItem){
    var GameInfoView = BoundView.extend({
       el: $('#page'),

@@ -6,6 +6,7 @@ define([
    'backbone',
    'rivets',
    'views/bound-view',
+   'adapters',
    'formatters'
 ], function($, _, Backbone, rivets, BoundView){
    var BoundView = Backbone.View.extend({

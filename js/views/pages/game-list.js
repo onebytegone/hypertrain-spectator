@@ -6,8 +6,7 @@ define([
    'backbone',
    'views/bound-view',
    'text!templates/pages/game-list.html',
-   'collections/game-collection',
-   'adapters'
+   'collections/game-collection'
 ], function($, _, Backbone, BoundView, viewTemplate, GameCollection){
    var GameListView = BoundView.extend({
       el: $('#page'),
