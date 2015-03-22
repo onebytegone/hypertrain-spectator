@@ -20,7 +20,7 @@ define([
 
    var GameListPage = Marionette.LayoutView.extend({
       el: $('#page'),
-      template: _.template('<div id="list"></list>'),
+      template: _.template(templates.GameListPage),
 
       regions: {
          list: "#list",
@@ -39,10 +39,12 @@ define([
          });
       },
 
-      render: function() {
-         Marionette.LayoutView.prototype.render.apply(this, arguments);
-         this.getRegion('list').show(new GameList({collection: this.collection}));
-         return this;
+      onRender: function() {
+         this.getRegion('list').show(
+            new GameList({
+               collection: this.collection
+            })
+         );
       }
    });
 
