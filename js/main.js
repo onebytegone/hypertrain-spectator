@@ -7,6 +7,9 @@ require.config({
       adapters: 'snips/adapters',
 
       backbone: 'thirdparty/backbone',
+      'backbone.babysitter': 'thirdparty/backbone.babysitter.min',
+      'backbone.marionette': 'thirdparty/backbone.marionette.min',
+      'backbone.wreqr': 'thirdparty/backbone.wreqr.min',
       jquery: 'thirdparty/jquery-1.11.2.min',
       rivets: 'thirdparty/rivets.min',
       sightglass: 'thirdparty/sightglass',
@@ -22,6 +25,10 @@ require.config({
       rivets : {
          deps : ['sightglass'],
          exports : 'rivets'
+      },
+      marionette : {
+         deps : ['backbone.babysitter', 'backbone.wreqr'],
+         exports : 'backbone.marionette'
       }
    }
 });
