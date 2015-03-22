@@ -12,7 +12,7 @@ define([
       model: GameItem,
 
       // Url to request when fetch() is called
-      url: config.server + '/spectator',
+      url: config.api + '/spectator',
 
       parse: function(response) {
          // No refomatting currently needed

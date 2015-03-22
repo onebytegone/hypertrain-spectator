@@ -26,7 +26,7 @@ define([
          var params = _.extend({
             type: 'GET',
             dataType: 'jsonp',
-            url: config.server + '/spectator/' + this.ident,
+            url: config.api + '/spectator/' + this.ident,
             processData: false
          }, options);
 
