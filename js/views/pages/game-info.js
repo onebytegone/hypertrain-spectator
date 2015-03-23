@@ -19,8 +19,6 @@ define([
       },
 
       initialize: function(ident) {
-         _.bindAll(this, 'render');
-
          this.model = new GameItem();
          this.model.ident = ident;
 

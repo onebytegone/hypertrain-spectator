@@ -20,7 +20,6 @@ define([
 
       // Overwrite the sync method to pass over the Same Origin Policy
       sync: function(method, model, options) {
-         console.log('sync');
          var self = this;
          var params = _.extend({
             type: 'GET',

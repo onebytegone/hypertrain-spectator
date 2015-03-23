@@ -16,8 +16,6 @@ define([
       },
 
       onRender: function() {
-         console.log('render');
-         console.log(this.board);
          if (!this.board) {
             return;
          }

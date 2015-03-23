@@ -27,8 +27,6 @@ define([
       },
 
       initialize: function() {
-         _.bindAll(this, 'render');
-
          this.collection = new GameCollection();
 
          var self = this;
