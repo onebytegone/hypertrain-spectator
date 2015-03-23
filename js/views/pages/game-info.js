@@ -5,14 +5,18 @@ define([
    'underscore',
    'backbone',
    'marionette',
-   'views/bound-view',
-   'views/game-preview',
    'templates',
-   'models/game-item'
-], function($, _, Backbone, Marionette, BoundView, GamePreview, templates, GameItem){
-   var GameInfoView = Marionette.ItemView.extend({
+   'models/game-item',
+   'views/elements/game-preview'
+], function($, _, Backbone, Marionette, templates, GameItem, GamePreview){
+
+   var GameInfoView = Marionette.LayoutView.extend({
       el: $('#page'),
       template: _.template(templates.GameInfoPage),
+
+      regions: {
+         'game-board': "#mBoard",
+      },
 
       initialize: function(ident) {
          _.bindAll(this, 'render');
@@ -29,6 +33,9 @@ define([
       },
 
       onRender: function() {
+         var preview = new GamePreview();
+         preview.board = this.model.get('board');
+         this.getRegion('game-board').show(preview);
       }
    });
 

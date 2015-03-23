@@ -1,25 +1,28 @@
-// Filename: views/pages/game-info
+// Filename: views/pages/game-preview.js
 
 define([
    'jquery',
    'underscore',
    'backbone',
-   'rivets',
-   'views/bound-view'
-], function($, _, Backbone, rivets, BoundView){
-   var GamePreview = Backbone.View.extend({
-      el: $('#preview'),
+   'marionette',
+], function($, _, Backbone, Marionette){
+   var GamePreview = Marionette.ItemView.extend({
+      tagName: "div",
+      template: _.template(''),
       board: null,
-
-      initialize: function() {
-         _.bindAll(this, 'render');
+      stateConfig: {
+         '_': 'free',
+         '#': 'free'
       },
 
-      render: function() {
+      onRender: function() {
+         console.log('render');
+         console.log(this.board);
          if (!this.board) {
             return;
          }
 
+         // Reverse rows and cols for data
          var board = this.board;
          board = _.map(board[0], function(col, index) {
             return _.map(board, function(row) {
@@ -27,17 +30,27 @@ define([
             });
          });
 
+         // Build elements
+         var self = this;
          var elements = _.reduce(this.board, function(carry, row) {
             var row = _.reduce(row, function(total, item) {
-               var cell = $('<div>');
-               cell.html(item);
+               var cell = $('<div class="tile">');
+               var classVal = 'player';
+
+               if (item in self.stateConfig) {
+                  classVal = self.stateConfig[item];
+               }
+
+               cell.addClass(classVal);
+
                total.append(cell);
+
                return total;
-            }, $('<div>'));
+            }, $('<div class="row">'));
 
             carry.append(row);
             return carry;
-         }, $('<div>'));
+         }, $('<div class="game-board">'));
 
          this.$el.append(elements);
       }

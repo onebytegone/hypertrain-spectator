@@ -1,3 +1,31 @@
 html {
    font-family: Menlo,Moncao,Courier,sans-serif;
 }
+
+.game-board {
+   display: table;
+   border-collapse: collapse;
+}
+
+.game-board .row {
+   display: table-row;
+}
+
+.game-board .tile {
+   display: table-cell;
+   width: 24px;
+   height: 24px;
+   border: 1px solid #ccc;
+}
+
+.game-board .free {
+   background-color: #eee;
+}
+
+.game-board .full {
+   background-color: #01579B;
+}
+
+.game-board .player {
+   background-color: #FDD835;
+}

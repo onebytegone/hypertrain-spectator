@@ -9,7 +9,8 @@ define([
    var GameItem = Backbone.Model.extend({
       defaults: {
          ident: '',
-         date: 0
+         date: 0,
+         board: []
       },
 
       parse: function(response) {
