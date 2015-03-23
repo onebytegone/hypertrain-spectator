@@ -1,10 +1,11 @@
 // Filename: router.js
+
 define([
-  'jquery',
-  'underscore',
-  'backbone',
-  'views/pages/game-list',
-  'views/pages/game-info'
+   'jquery',
+   'underscore',
+   'backbone',
+   'views/pages/game-list',
+   'views/pages/game-info'
 ], function($, _, Backbone, GameListPage, GameInfoView){
    var AppRouter = Backbone.Router.extend({
       routes: {
