@@ -25,7 +25,7 @@ define([
       });
 
       app_router.on('route:showGame', function(ident){
-         var view = new GameInfoView();
+         var view = new GameInfoView({gameIdent: ident});
          view.render();
       });
 
